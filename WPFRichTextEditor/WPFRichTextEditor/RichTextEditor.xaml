@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="WPFRichTextEditor.RichTextEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFRichText">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <ToolBar Grid.Row="0"
+                     Name="EditorToolBar"
+                     DockPanel.Dock="Top"
+                     IsEnabled="{Binding IsToolBarVisible}">
+                <Button Command="ApplicationCommands.Cut" ToolTip="Cut">
+                    <Image Source="Images/cut.png" />
+                </Button>
+                <Button Command="ApplicationCommands.Copy" ToolTip="Cut">
+                    <Image Source="Images/copy.png" />
+                </Button>
+                <Button Command="ApplicationCommands.Paste" ToolTip="Paste">
+                    <Image Source="Images/paste.png" />
+                </Button>
+                <Button Command="ApplicationCommands.Undo" ToolTip="Undo">
+                    <Image Source="Images/undo.png" />
+                </Button>
+                <Button Command="ApplicationCommands.Redo" ToolTip="Redo">
+                    <Image Source="Images/redo.png" />
+                </Button>
+                <Separator />
+                <ComboBox Name="cmbFontFamily" ToolTip="Select Font" SelectionChanged="cmbFontFamily_SelectionChanged" />
+            </ToolBar>
+        </Grid>
+    </Grid>
+</UserControl>
